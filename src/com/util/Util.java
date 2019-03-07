@@ -46,6 +46,6 @@ public class Util {
             dist+=(a[i]-b[i])*(a[i]-b[i]);
             
         }
-        return dist;
+        return Math.sqrt(dist);
     }
 }
