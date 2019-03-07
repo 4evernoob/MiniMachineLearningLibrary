@@ -10,8 +10,25 @@ package com.util;
  * @author Da supa pc jr
  */
 public class Util {
-    //calculate variance for a determined feature and class
-    public static double variance(double[][] val, int classe, int vari, int[] tags, int number) {
+    //returns min and max from the data
+    public static double[] minmax(double [][] data){
+    double min=data[0][0];
+    double max=data[0][0];
+     
+    for(int r=0;r<data.length;r++){           //
+        for(int k=0;k<data[0].length;k++){        //
+            if(data[r][k] < min){           // finds a min value
+                min = data[r][k];
+             }
+             if(data[r][k]>max){
+             max=data[r][k];
+             }
+        }
+    }
+    return new double[]{min, max};
+    }
+        //calculate variance for a determined feature and class
+       public static double variance(double[][] val, int classe, int vari, int[] tags, int number) {
         double mean = mean(val, classe, vari, tags, number);
         double var = 0;
         for (int i = 0; i < val.length; i++) {
